@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Maju Bersama Digital - Mitra Digital Bisnis Anda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-background {
+            background: radial-gradient(circle, rgba(29, 78, 217, 0.15) 0%, transparent 60%), linear-gradient(to bottom, rgba(29, 78, 217, 0.05) 0%, transparent 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .animated-orb {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(29, 78, 217, 0.3) 0%, transparent 50%);
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: orb-float 15s ease-in-out infinite alternate;
+        }
+        @keyframes orb-float {
+            0% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+            50% { transform: translate(50px, -50px) scale(1.2); opacity: 0.5; }
+            100% { transform: translate(-50px, 50px) scale(0.9); opacity: 0.6; }
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(49, 105, 204, 0.15);
+        }
+        .button-hover {
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .button-hover:hover {
+            transform: translateY(-2px);
+        }
+        .navbar-blur {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .animate-count {
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 w-full py-4 navbar-blur border-b border-gray-200">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-blue-800 flex items-center space-x-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 1.381-1.119 2.5-2.5 2.5S7 12.381 7 11S8.119 8.5 9.5 8.5 12 9.619 12 11zm0 7.5c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"></path></svg>
+                <span>PT Maju Bersama Digital</span>
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#tentang-kami" class="hover:text-blue-600 transition duration-300">Tentang Kami</a>
+                <a href="#layanan" class="hover:text-blue-600 transition duration-300">Layanan</a>
+                <a href="#statistik" class="hover:text-blue-600 transition duration-300">Statistik</a>
+                <a href="#kontak" class="hover:text-blue-600 transition duration-300">Kontak</a>
+                <a href="#kontak" class="bg-blue-700 text-white px-6 py-2 rounded-md font-semibold button-hover">Hubungi Kami</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md mt-2 py-4 px-6">
+            <a href="#tentang-kami" class="block py-2 text-gray-800 hover:text-blue-600">Tentang Kami</a>
+            <a href="#layanan" class="block py-2 text-gray-800 hover:text-blue-600">Layanan</a>
+            <a href="#statistik" class="block py-2 text-gray-800 hover:text-blue-600">Statistik</a>
+            <a href="#kontak" class="block py-2 text-gray-800 hover:text-blue-600">Kontak</a>
+            <a href="#kontak" class="block mt-3 bg-blue-700 text-white px-4 py-2 rounded-md font-semibold text-center button-hover">Hubungi Kami</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-background min-h-screen flex items-center justify-center pt-24 pb-12 md:pt-32 md:pb-20 relative">
+        <div class="animated-orb" style="top: 10%; left: 10%;"></div>
+        <div class="animated-orb" style="bottom: 15%; right: 15%;"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 leading-tight">
+                Maju Bersama Digital
+            </h1>
+            <p class="text-xl md:text-2xl lg:text-3xl text-gray-700 mb-8">
+                Transformasi Bisnis Lokal Menjadi Profesional di Era Digital.
+            </p>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+                Kami spesialis dalam membangun fondasi digital yang kuat untuk UMKM dan bisnis lokal, memastikan Anda tidak hanya hadir, tetapi juga berkembang secara signifikan di pasar online.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#layanan" class="bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg uppercase button-hover shadow-lg">Lihat Layanan Kami</a>
+                <a href="#kontak" class="bg-transparent text-blue-700 border-2 border-blue-700 px-8 py-4 rounded-lg font-bold text-lg uppercase hover:bg-blue-700 hover:text-white transition duration-300 button-hover shadow-lg">Konsultasi Gratis</a>
+            </div>
+            <div class="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8 px-4">
+                <div class="flex flex-col items-center fade-in">
+                    <div class="text-5xl font-bold text-blue-700 mb-2">
+                        <span class="counter" data-target="150">0</span>+
+                    </div>
+                    <p class="text-lg text-gray-700 font-semibold">Klien Terlayani</p>
+                </div>
+                <div class="flex flex-col items-center fade-in">
+                    <div class="text-5xl font-bold text-blue-700 mb-2">
+                        <span class="counter" data-target="300">0</span>+
+                    </div>
+                    <p class="text-lg text-gray-700 font-semibold">Proyek Sukses</p>
+                </div>
+                <div class="flex flex-col items-center fade-in">
+                    <div class="text-5xl font-bold text-blue-700 mb-2">
+                        <span class="counter" data-target="6">0</span>
+                    </div>
+                    <p class="text-lg text-gray-700 font-semibold">Tahun Beroperasi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami Section -->
+    <section id="tentang-kami" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 fade-in">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Perjalanan Kami: Membangun Jembatan Digital</h2>
+                    <p class="text-lg text-gray-700 mb-5 leading-relaxed">
+                        Dimulai dari keprihatinan terhadap potensi bisnis lokal yang belum tergarap optimal di ranah digital, PT Maju Bersama Digital hadir pada tahun 2018. Kami percaya setiap bisnis, sekecil apapun, berhak memiliki citra profesional dan jangkauan seluas-luasnya melalui pemanfaatan teknologi digital.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-5 leading-relaxed">
+                        Fokus kami adalah memberdayakan UMKM dan bisnis komunitas dengan solusi digital yang tidak hanya efektif, tetapi juga terjangkau dan mudah diimplementasikan. Kami bukan sekadar penyedia jasa, melainkan mitra strategis yang bertumbuh bersama Anda, menavigasi kompleksitas dunia online untuk meraih pencapaian nyata.
+                    </p>
+                    <p class="text-lg text-gray-700 font-semibold leading-relaxed">
+                        Kami berdedikasi untuk menjadi agen perubahan positif dalam ekosistem bisnis digital Indonesia.
+                    </p>
+                </div>
+                <div class="lg:w-1/2 fade-in">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Tim bekerja sama" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visi & Misi Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-10 h-10 text-blue-700 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zM12 14v7M12 14l-9-5M12 14l9 5"></path></svg>
+                        <h3 class="text-3xl font-bold text-gray-800">Visi</h3>
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Menjadi mitra digital terpercaya bagi 10.000 bisnis Indonesia, mendorong pertumbuhan inklusif melalui solusi teknologi yang inovatif dan mudah diakses.
+                    </p>
+                </div>
+                <div class="fade-in">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-10 h-10 text-blue-700 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 012-2h10a2 2 0 012 2M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7M9 19v-6M15 19v-6"></path></svg>
+                        <h3 class="text-3xl font-bold text-gray-800">Misi</h3>
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Memberdayakan bisnis lokal untuk tumbuh secara berkelanjutan dengan menyediakan layanan digital yang berkualitas, terjangkau, dan menghasilkan dampak terukur. Kami berkomitmen pada transparansi, hasil nyata, dan hubungan kemitraan jangka panjang.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan Section -->
+    <section id="layanan" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Solusi Digital Komprehensif</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Kami menawarkan rangkaian layanan digital yang dirancang khusus untuk meningkatkan kehadiran online dan performa bisnis Anda.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Web Design -->
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover border border-gray-200 fade-in">
+                    <div class="flex items-center mb-6">
+                        <svg class="w-12 h-12 text-blue-700 mr-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 10.34c-.561-4.027-3.754-6.862-7.942-6.862c-1.31 0-2.5.533-3.428 1.428M19.428 10.34l-5.192 5.572m5.192-5.572l-7.374-7.996M19.428 10.34C14.868 10.34 11.4 13.798 11.4 18.375v1.875c0 .983-.873 1.778-1.942 1.778H6.428C5.527 22 4.8 21.273 4.8 20.375v-1.875C4.8 13.798 8.255 10.34 12.813 10.34m0 0C17.37 10.34 20.825 13.798 20.825 18.375v1.875c0 .983-.873 1.778-1.942 1.778H12.813"></path></svg>
+                        <h4 class="text-2xl font-bold text-gray-800">Web Design & Development</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Menciptakan website yang profesional, responsif, dan mengkonversi pengunjung menjadi pelanggan setia.</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Desain UI/UX Intuitif</li>
+                        <li>Pengembangan Frontend & Backend</li>
+                        <li>Optimasi Kecepatan & SEO</li>
+                        <li>Integrasi E-commerce</li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Management -->
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover border border-gray-200 fade-in">
+                    <div class="flex items-center mb-6">
+                        <svg class="w-12 h-12 text-blue-700 mr-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0v-1.5a2.5 2.5 0 00-5 0zM21 12a10 10 0 11-20 0 10 10 0 0120 0z"></path></svg>
+                        <h4 class="text-2xl font-bold text-gray-800">Social Media Management</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Membangun dan mengelola kehadiran Anda di platform media sosial untuk meningkatkan engagement dan brand awareness.</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Strategi Konten Berkualitas</li>
+                        <li>Jadwal Posting Konsisten</li>
+                        <li>Interaksi Aktif dengan Audiens</li>
+                        <li>Analisis Performa Media Sosial</li>
+                    </ul>
+                </div>
+
+                <!-- SEO & SEM -->
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover border border-gray-200 fade-in">
+                    <div class="flex items-center mb-6">
+                        <svg class="w-12 h-12 text-blue-700 mr-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <h4 class="text-2xl font-bold text-gray-800">SEO & Google Ads</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Meningkatkan visibilitas organik Anda di mesin pencari dan mengoptimalkan kampanye iklan berbayar untuk hasil maksimal.</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Audit SEO Mendalam</li>
+                        <li>Optimasi On-Page & Off-Page</li>
+                        <li>Manajemen Kampanye Google Ads</li>
+                        <li>Pelaporan Kinerja Transparan</li>
+                    </ul>
+                </div>
+
+                <!-- Branding -->
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover border border-gray-200 fade-in">
+                    <div class="flex items-center mb-6">
+                        <svg class="w-12 h-12 text-blue-700 mr-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm0 14a9.999 9.999 0 009.93-10H3.07C3.07 16.435 3.996 20 12 20z"></path></svg>
+                        <h4 class="text-2xl font-bold text-gray-800">Branding Strategy</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Membangun identitas merek yang kuat dan konsisten untuk membedakan Anda dari kompetitor.</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Pengembangan Identitas Visual</li>
+                        <li>Positioning Merek</li>
+                        <li>Strategi Komunikasi Merek</li>
+                        <li>Panduan Merek (Brand Guidelines)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Nilai Inti Kami</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Prinsip-prinsip yang memandu setiap langkah dan keputusan kami dalam melayani klien.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200 fade-in">
+                    <svg class="w-16 h-16 text-blue-700 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h4 class="text-2xl font-bold text-gray-800 mb-3">Orientasi Hasil</h4>
+                    <p class="text-gray-600">Fokus pada pencapaian target bisnis klien melalui strategi digital yang terukur dan efektif.</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200 fade-in">
+                    <svg class="w-16 h-16 text-blue-700 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h4 class="text-2xl font-bold text-gray-800 mb-3">Transparansi & Integritas</h4>
+                    <p class="text-gray-600">Menjaga kejujuran dalam setiap proses, komunikasi, dan pelaporan kepada klien.</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200 fade-in">
+                    <svg class="w-16 h-16 text-blue-700 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <h4 class="text-2xl font-bold text-gray-800 mb-3">Inovasi Berkelanjutan</h4>
+                    <p class="text-gray-600">Terus belajar dan beradaptasi dengan tren digital terbaru untuk memberikan solusi yang relevan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistik Section -->
+    <section id="statistik" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Pertumbuhan yang Terukur</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Kami bangga dengan pencapaian yang telah kami raih bersama para klien. Angka-angka ini adalah bukti nyata dari komitmen dan efektivitas solusi digital kami.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                <div class="p-6 bg-white rounded-lg shadow-lg border border-gray-200 fade-in">
+                    <div class="text-5xl font-bold text-blue-700 mb-2 animate-count">
+                        <span class="counter" data-target="150">0</span>+
+                    </div>
+                    <p class="text-xl text-gray-700 font-semibold">Klien Aktif</p>
+                    <p class="text-gray-500">Bisnis yang telah kami dukung.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-lg border border-gray-200 fade-in">
+                    <div class="text-5xl font-bold text-blue-700 mb-2 animate-count">
+                        <span class="counter" data-target="300">0</span>+
+                    </div>
+                    <p class="text-xl text-gray-700 font-semibold">Proyek Terselesaikan</p>
+                    <p class="text-gray-500">Berbagai skala dan industri.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-lg border border-gray-200 fade-in">
+                    <div class="text-5xl font-bold text-blue-700 mb-2 animate-count">
+                        <span class="counter" data-target="95">0</span>%
+                    </div>
+                    <p class="text-xl text-gray-700 font-semibold">Tingkat Kepuasan Klien</p>
+                    <p class="text-gray-500">Berdasarkan survei kepuasan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Apa Kata Klien Kami</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Dengarkan langsung dari para pemimpin bisnis yang telah merasakan manfaat kolaborasi dengan PT Maju Bersama Digital.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-200 fade-in">
+                    <div class="flex items-center mb-6">
+                        <img src="https://via.placeholder.com/60/2979FF/FFFFFF?text=AK" alt="Avatar Klien 1" class="w-16 h-16 rounded-full mr-6 border-2 border-blue-700">
+                        <div>
+                            <p class="text-xl font-bold text-gray-800">Andi Kusuma</p>
+                            <p class="text-gray-600">CEO, PT Kopi Nusantara</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic leading-relaxed">
+                        "Sejak bekerja sama dengan Maju Bersama Digital, website toko online kami mengalami peningkatan trafik signifikan. Tim mereka sangat profesional dan responsif dalam memahami kebutuhan bisnis kami yang unik."
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-200 fade-in">
+                    <div class="flex items-center mb-6">
+                        <img src="https://via.placeholder.com/60/2979FF/FFFFFF?text=SR" alt="Avatar Klien 2" class="w-16 h-16 rounded-full mr-6 border-2 border-blue-700">
+                        <div>
+                            <p class="text-xl font-bold text-gray-800">Siti Rahma</p>
+                            <p class="text-gray-600">Founder, UMKM Batik Modern</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic leading-relaxed">
+                        "Kami sangat terbantu dengan strategi media sosial yang dirancang oleh Maju Bersama Digital. Engagement kami meningkat pesat, dan brand awareness kami kini jauh lebih kuat di kalangan konsumen muda."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="kontak" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Mari Berkolaborasi</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Siap membawa bisnis Anda ke level selanjutnya? Hubungi kami untuk mendiskusikan kebutuhan digital Anda.
+                </p>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2 fade-in">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Dapatkan Konsultasi Gratis</h3>
+                    <p class="text-lg text-gray-700 mb-5 leading-relaxed">
+                        Kami siap mendengarkan tantangan bisnis Anda dan merancang solusi digital yang paling sesuai.
+                    </p>
+                    <div class="mb-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">Kontak Langsung</h4>
+                        <div class="flex items-center mb-2">
+                            <svg class="w-6 h-6 text-blue-700 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 17a2 2 0 00-2-2h10a2 2 0 002 2v9a2 2 0 002 2h10a2 2 0 002-2v-9a2 2 0 00-2-2h-10a2 2 0 00-2 2v9a2 2 0 002 2h10a2 2 0 002-2v-9a2 2 0 00-2-2H5z"></path></svg>
+                            <p class="text-gray-700 text-lg">hello@majubersamadigital.com</p>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-blue-700 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.066 0.756a11 11 0 00-2.556.379c-.633.154-1.144.704-1.34 1.335l-.58 2.313c-.2.802.303 1.656.98 1.985l.814.527a11 11 0 002.46 1.388l.499.233c.63.306 1.35.457 2.07.457c1.57 0 3.03-.487 4.237-1.345l.683-.599c.487-.424 1.107-.67 1.76-.67h1.095c.663 0 1.283.247 1.76.67l.683.599c1.206.858 2.664 1.345 4.237 1.345.723 0 1.444-.15 2.07-.457l.499-.233c.923-.434 1.545-1.266 1.67-2.179l.022-.349c.047-.484.077-.97.077-1.466V7.5a2 2 0 00-2-2z"></path></svg>
+                            <p class="text-gray-700 text-lg">0812 3456 7890</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-8">
+                        <a href="#" class="text-blue-700 hover:text-blue-900 transition duration-300"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.46,4.79C22.16,3.87,21.32,3.03,20.4,2.73c-1.79,-0.62-7.47,-0.62-9.29,0c-1.79,0.62-7.47,0.62-9.29,0C4.68,3.03,3.84,3.87,3.54,4.79c-0.62,1.79,-0.62,7.47,0,9.29c0.3,0.92,1.14,1.76,2.06,2.06c1.79,0.62,7.47,0.62,9.29,0c1.79,0,7.47,0,9.29,0c0.92,-0.3,1.76,-1.14,2.06,-2.06c0.62,-1.79,0.62,-7.47,0,-9.29Zm-10.46,12.77c-0.71,0.71-1.56,1.07-2.47,1.07c-0.91,0-1.76,-0.36-2.47,-1.07c-0.67,-0.67-1.07,-1.56-1.07,-2.47c0,-0.91,0.4,-1.8,1.07,-2.47c0.67,-0.67,1.56,-1.07,2.47,-1.07c0.91,0,1.76,0.4,2.47,1.07c0.67,0.67,1.07,1.56,1.07,2.47c0,0.91,-0.4,1.8,-1.07,2.47Zm-5.47,-7.27c0,-0.55,-0.45,-1,-1,-1s-1,0.45-1,1v2c0,0.55,0.45,1,1,1s1,-0.45,1,-1v-2Zm6,0c0,-0.55,-0.45,-1,-1,-1s-1,0.45-1,1v2c0,0.55,0.45,1,1,1s1,-0.45,1,-1v-2Z"/></svg></a>
+                        <a href="#" class="text-blue-700 hover:text-blue-900 transition duration-300"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12c0-5.523-4.477-10-10-10s-10 4.477-10 10c0 4.477 3.098 8.227 7.109 9.416v-6.585h-2.532v-3.001h2.532v-1.875c0-2.493 1.493-3.859 3.759-3.859c1.109 0 2.054.083 2.345.12v2.731h-1.635c-1.296 0-1.545.628-1.545 1.531v1.749h2.839l-.362 3.001h-2.477v6.585c4.011-1.189 7.109-4.939 7.109-9.416z"/></svg></a>
+                        <a href="#" class="text-blue-700 hover:text-blue-900 transition duration-300"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.443 0c-2.873 0-5.209 2.336-5.209 5.209v4.147h-3.027c-.472 0-1.008.407-1.008 1.008v3.027c0 .539.467 1.008 1.008 1.008h3.027v8.239c0 .539.467 1.008 1.008 1.008h3.027c.539 0 1.008-.467 1.008-1.008v-8.239h2.838c.539 0 1.008-.467 1.008-1.008v-3.027c0-.539-.467-1.008-1.008-1.008h-2.838v-2.593c0-1.258.331-1.893 1.893-1.893h1.134v-3.027h-2.472z"/></svg></a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 fade-in">
+                    <form id="contactForm" class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="md:col-span-2">
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nama Lengkap</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 shadow-sm">
+                            </div>
+                            <div class="md:col-span-1">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 shadow-sm">
+                            </div>
+                            <div class="md:col-span-1">
+                                <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Nama Perusahaan</label>
+                                <input type="text" id="company" name="company" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 shadow-sm">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Layanan yang Diminati</label>
+                                <select id="service" name="service" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 shadow-sm">
+                                    <option value="">Pilih Layanan</option>
+                                    <option value="web-design">Web Design & Development</option>
+                                    <option value="social-media">Social Media Management</option>
+                                    <option value="seo-sem">SEO & Google Ads</option>
+                                    <option value="branding">Branding Strategy</option>
+                                    <option value="other">Lainnya</option>
+                                </select>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Pesan Anda</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 shadow-sm"></textarea>
+                            </div>
+                        </div>
+                        <div class="mt-8 text-center">
+                            <button type="submit" class="bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg uppercase button-hover shadow-lg w-full md:w-auto">Kirim Pesan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-700">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Siap Mengembangkan Bisnis Anda?</h2>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto mb-10">
+                Jangan biarkan potensi bisnis Anda terhambat oleh keterbatasan digital. PT Maju Bersama Digital siap menjadi mitra strategis Anda.
+            </p>
+            <a href="#kontak" class="bg-white text-blue-700 px-10 py-5 rounded-lg font-bold text-xl uppercase hover:bg-gray-200 transition duration-300 button-hover shadow-lg">
+                Mulai Kolaborasi Sekarang
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-gray-800 text-gray-300">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <a href="#hero" class="text-2xl font-bold text-white flex items-center space-x-2 mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 1.381-1.119 2.5-2.5 2.5S7 12.381 7 11S8.119 8.5 9.5 8.5 12 9.619 12 11zm0 7.5c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"></path></svg>
+                        <span>PT Maju Bersama Digital</span>
+                    </a>
+                    <p class="text-gray-400 leading-relaxed">
+                        Membantu UMKM dan bisnis lokal hadir secara profesional di dunia online. Kami adalah mitra pertumbuhan digital Anda.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-5">Layanan</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#layanan" class="hover:text-blue-400 transition duration-300">Web Design & Development</a></li>
+                        <li><a href="#layanan" class="hover:text-blue-400 transition duration-300">Social Media Management</a></li>
+                        <li><a href="#layanan" class="hover:text-blue-400 transition duration-300">SEO & Google Ads</a></li>
+                        <li><a href="#layanan" class="hover:text-blue-400 transition duration-300">Branding Strategy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-5">Perusahaan</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#tentang-kami" class="hover:text-blue-400 transition duration-300">Tentang Kami</a></li>
+                        <li><a href="#statistik" class="hover:text-blue-400 transition duration-300">Statistik</a></li>
+                        <li><a href="#kontak" class="hover:text-blue-400 transition duration-300">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-5">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.46,4.79C22.16,3.87,21.32,3.03,20.4,2.73c-1.79,-0.62-7.47,-0.62-9.29,0c-1.79,0.62-7.47,0.62-9.29,0C4.68,3.03,3.84,3.87,3.54,4.79c-0.62,1.79,-0.62,7.47,0,9.29c0.3,0.92,1.14,1.76,2.06,2.06c1.79,0.62,7.47,0.62,9.29,0c1.79,0,7.47,0,9.29,0c0.92,-0.3,1.76,-1.14,2.06,-2.06c0.62,-1.79,0.62,-7.47,0,-9.29Zm-10.46,12.77c-0.71,0.71-1.56,1.07-2.47,1.07c-0.91,0-1.76,-0.36-2.47,-1.07c-0.67,-0.67-1.07,-1.56-1.07,-2.47c0,-0.91,0.4,-1.8,1.07,-2.47c0.67,-0.67,1.56,-1.07,2.47,-1.07c0.91,0,1.76,0.4,2.47,1.07c0.67,0.67,1.07,1.56,1.07,2.47c0,0.91,-0.4,1.8,-1.07,2.47Zm-5.47,-7.27c0,-0.55,-0.45,-1,-1,-1s-1,0.45-1,1v2c0,0.55,0.45,1,1,1s1,-0.45,1,-1v-2Zm6,0c0,-0.55,-0.45,-1,-1,-1s-1,0.45-1,1v2c0,0.55,0.45,1,1,1s1,-0.45,1,-1v-2Z"/></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12c0-5.523-4.477-10-10-10s-10 4.477-10 10c0 4.477 3.098 8.227 7.109 9.416v-6.585h-2.532v-3.001h2.532v-1.875c0-2.493 1.493-3.859 3.759-3.859c1.109 0 2.054.083 2.345.12v2.731h-1.635c-1.296 0-1.545.628-1.545 1.531v1.749h2.839l-.362 3.001h-2.477v6.585c4.011-1.189 7.109-4.939 7.109-9.416z"/></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.443 0c-2.873 0-5.209 2.336-5.209 5.209v4.147h-3.027c-.472 0-1.008.407-1.008 1.008v3.027c0 .539.467 1.008 1.008 1.008h3.027v8.239c0 .539.467 1.008 1.008 1.008h3.027c.539 0 1.008-.467 1.008-1.008v-8.239h2.838c.539 0 1.008-.467 1.008-1.008v-3.027c0-.539-.467-1.008-1.008-1.008h-2.838v-2.593c0-1.258.331-1.893 1.893-1.893h1.134v-3.027h-2.472z"/></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-12 mt-12 border-t border-gray-700 text-center text-gray-500">
+                &copy; 2024 PT Maju Bersama Digital. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for Fade-in Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Unobserve once visible
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animated Counter
+        function animateCounter(targetElement, startValue, endValue, duration) {
+            let startTime = null;
+            const counterElement = targetElement.querySelector('.counter');
+
+            function step(currentTime) {
+                if (!startTime) startTime = currentTime;
+                const progress = Math.min((currentTime - startTime) / duration, 1);
+                counterElement.textContent = Math.floor(progress * (endValue - startValue) + startValue);
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    counterElement.textContent = endValue; // Ensure final value is exact
+                }
+            }
+            requestAnimationFrame(step);
+        }
+
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.dataset.target);
+                    animateCounter(entry.target.parentElement, 0, target, 1500);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 }); // Trigger when 50% of the counter element is visible
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // Form Submission (Placeholder)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Pesan Anda telah terkirim! Terima kasih.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+```submit', function(e) {
+            e.preventDefault();
+            alert('Pesan Anda telah terkirim! Terima kasih.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
